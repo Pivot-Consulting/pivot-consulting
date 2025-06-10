@@ -21,34 +21,41 @@
   </header>
 
   <main>
-    <section class="hero">
-      <h1>
-        <span id="hero-static">Consultant.</span>
-        <span id="hero-text" class="fade">Automatisateur.</span>
-        <span id="hero-static">Formateur.</span>
-      </h1>
-      <p>Des solutions concrètes pour les entreprises, les salariés et les étudiants.</p>
-      <a href="pages/services.html" class="cta">Découvrir mes offres</a>
+    <section class="hero" style="background-image: url('assets/hero-bg.jpg');">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>
+          <span id="hero-text" class="fade-in">Consultant.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Des solutions concrètes pour les entreprises, les salariés et les étudiants.
+        </p>
+        <a href="pages/services.html" class="cta">Découvrir mes offres</a>
+      </div>
     </section>
     
     <!-- Ajoute juste avant la balise </body> ce script : -->
     <script>
-      const texts = ['Automatisateur.', 'Formateur.', 'Conseiller.', 'Développeur d’outils.', 'Formateur Excel & BI.'];
+      // Texte animé
+      const texts = [
+        'Consultant.',
+        'Automatisateur.',
+        'Formateur.',
+        'Développeur d’outils.',
+        'Coach BI.'
+      ];
       let idx = 0;
       const heroText = document.getElementById('hero-text');
       setInterval(() => {
-        // fade-out
         heroText.classList.remove('fade-in');
         heroText.classList.add('fade-out');
         setTimeout(() => {
-          // change text
           idx = (idx + 1) % texts.length;
           heroText.textContent = texts[idx];
-          // fade-in
           heroText.classList.remove('fade-out');
           heroText.classList.add('fade-in');
         }, 500);
-      }, 3000);
+      }, 3500);
     </script>
 
 
