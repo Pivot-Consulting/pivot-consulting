@@ -22,10 +22,35 @@
 
   <main>
     <section class="hero">
-      <h1>Consultant. Automatisateur. Formateur.</h1>
+      <h1>
+        <span id="hero-static">Consultant.</span>
+        <span id="hero-text" class="fade">Automatisateur.</span>
+        <span id="hero-static">Formateur.</span>
+      </h1>
       <p>Des solutions concrètes pour les entreprises, les salariés et les étudiants.</p>
       <a href="pages/services.html" class="cta">Découvrir mes offres</a>
     </section>
+    
+    <!-- Ajoute juste avant la balise </body> ce script : -->
+    <script>
+      const texts = ['Automatisateur.', 'Formateur.', 'Conseiller.', 'Développeur d’outils.', 'Formateur Excel & BI.'];
+      let idx = 0;
+      const heroText = document.getElementById('hero-text');
+      setInterval(() => {
+        // fade-out
+        heroText.classList.remove('fade-in');
+        heroText.classList.add('fade-out');
+        setTimeout(() => {
+          // change text
+          idx = (idx + 1) % texts.length;
+          heroText.textContent = texts[idx];
+          // fade-in
+          heroText.classList.remove('fade-out');
+          heroText.classList.add('fade-in');
+        }, 500);
+      }, 3000);
+    </script>
+
 
     <section class="services">
       <h2>Ce que je propose</h2>
