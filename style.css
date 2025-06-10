@@ -45,9 +45,15 @@ nav a {
 }
 
 .hero {
-  text-align: center;
-  padding: 4rem 1rem;
-  background-color: #e0ecff;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 }
 
 .hero h1 {
@@ -141,6 +147,48 @@ footer {
 }
 
 /* Animations pour le Hero défilant */
+.hero .overlay {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Bouton CTA */
+.hero-content .cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #0059ff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-content .cta:hover {
+  background-color: #0044cc;
+}
+
+/* Animations pour le texte */
 #hero-text {
   display: inline-block;
   transition: opacity 0.5s ease;
@@ -153,4 +201,44 @@ footer {
 
 .fade-out {
   opacity: 0;
+}
+
+/* Nav simplifiée en fixe en haut */
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  background: rgba(10,10,35,0.8);
+  z-index: 10;
+}
+
+nav {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
